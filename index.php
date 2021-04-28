@@ -1,7 +1,7 @@
 <?php
 /* Código/script de validação para CPFs*/
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $resultado = 'válido';
+    $resultado = 'Válido';
     $invalidos = [];
     for($i = 1; $i < 10;$i++) {
         $val = '';
