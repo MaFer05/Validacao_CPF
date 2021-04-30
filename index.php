@@ -13,8 +13,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     if(in_array($cpf, $invalidos))
         $resultado = 'Inválido';
     if($resultado == 'Válido') {
-        foreach($cpf as $d)
-            if (!is_int($d))
+        foreach(str_split($cpf) as $d)
+            if (!is_numeric($d))
                 $resultado = 'Inválido';
     }
 
@@ -62,7 +62,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     </head>
     <body>
         <form action="index.php" method="post">
-            <label for="cpf">CPF: </cpf>
+            <label for="cpf">CPF: </label>
             <input type="text" name="cpf" />
             <button type="submit">Validar</button>
         </form>
